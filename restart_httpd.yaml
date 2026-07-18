@@ -1,0 +1,9 @@
+---
+- name: Restart HTTPD service
+  hosts: all
+  tasks:
+    - name: Service HTTPD to be restarted
+      systemd:
+        name: httpd
+        state: restarted
+        enabled: true
