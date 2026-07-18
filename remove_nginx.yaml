@@ -1,0 +1,8 @@
+---
+- name: Remove NGINX
+  hosts: all
+  tasks:
+    - name: Remove NGINX package
+      dnf:
+        name: nginx
+        state: absent
