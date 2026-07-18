@@ -1,0 +1,19 @@
+---
+- name: Install and Start HTTP package
+  hosts: all
+  tasks:
+    - name: Remove HTTP if exists
+      dnf:
+        name: httpd
+        state: absent
+    - name: Install HTTP
+      dnf:
+        name: httpd
+        state: installed
+    - name: Start HTTP
+      systemd:
+        name: httpd
+        state: restarted
+        enabled: true
+     
+ 
